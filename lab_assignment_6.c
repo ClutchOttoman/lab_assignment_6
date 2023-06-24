@@ -6,12 +6,12 @@ int search(int numbers[], int low, int high, int value) {
     return low;
   if (numbers[high] == value)
     return high;
-  else if (low < high) {
-    low++;
-    high--;
-    index = search(numbers, low, high, value);
+  else if (low > high) {
+    return -1;
   }
-  return -1;
+  low++;
+  high--;
+  index = search(numbers, low, high, value);
 }
 
 void printArray(int numbers[], int sz) {
